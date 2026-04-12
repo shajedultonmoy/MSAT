@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>MSAT Portfolio</title>
+</head>
+<body>
+    <nav>
+        <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+            Shajedul Alam <span>Tonmoy</span>
+        </div>
+        <div class="nav-container">
+            <div class="links">
+                <a href="index.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100" class="active-link">Home</a>
+                <a href="index.html#skills" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">Skills</a>
+                <a href="index.html#about" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">Introduction</a>
+                <a href="index.html#services" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">Services</a>
+                <a href="contact.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">Contact</a>
+            </div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html" class="active-link">Home</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="index.html#about">Introduction</a>
+                <a href="index.html#services">Services</a>
+                <a href="contact.html">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>    
+        </div>
+    </nav>
+    <section>
+        <div class="main-container">
+            <div class="content">
+                <h1 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="600">Hey I'm <span>Shajedul</span></h1>
+                <div data-aos="fade-left" data-aos-duration="1500" data-aos-delay="800" class="typewriter">I'm a <span class="typewriter-text"></span><label for="">|</label></div>
+                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1000">Shajedul Alam Tonmoy is an IT professional with a Diploma in Computer Engineering and ongoing Bachelor's studies in Computer Engineering. Currently serving as a Junior Specialist IT & Software at Unified Information Technology Limited, he specializes in hardware troubleshooting, software installation, server administration, and technical client support. Passionate about testing and learning new technologies, he has completed professional training in Windows Server, Red Hat Linux, and Graphic Design. He is eager to apply his technical expertise and problem-solving skills in dynamic, growth-oriented environments.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/mdshajedulalam/" target="_blank"><i class="fa-brands fa-linkedin" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1200"></i></a>
+                    <a href="https://github.com/shajedultonmoy"><i class="fa-brands fa-github" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300"></i></a>
+                    <a href="https://www.facebook.com/share/1BSDsCe3EZ/?mibextid=wwXIfr"><i class="fa-brands fa-facebook" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400"></i></a>
+                    <!-- <a href="#"><i class="fa-solid fa-at" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500"></i></a> -->
+                </div>
+                <!-- <button data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1700">Download CV</button> -->
+            </div>
+            <div class="image" data-aos="zoom-in" data-aos-duration="2000">
+                <img src="main.jpeg" alt="">
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:0});
+    </script>
+</body>
+</html>
