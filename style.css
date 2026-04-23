@@ -1,12 +1,19 @@
 :root {
-    --bg-base: #050505;
-    --bg-surface: rgba(255, 255, 255, 0.05);
-    --text-main: #ffffff;
-    --text-muted: #cccccc;
-    --text-subtle: #aaaaaa;
-    --brand: #5F8D4E;
-    --brand-dark: #4a7a3d;
-    --border-soft: rgba(95, 141, 78, 0.3);
+    --bg-base: #333333;
+    --bg-base-deep: #2b2b2b;
+    --bg-surface: rgba(225, 244, 243, 0.08);
+    --bg-surface-strong: rgba(225, 244, 243, 0.14);
+    --text-main: #FFFFFF;
+    --text-muted: #E1F4F3;
+    --text-subtle: rgba(225, 244, 243, 0.78);
+    --brand: #706C61;
+    --brand-dark: #5f5b52;
+    --brand-soft: rgba(112, 108, 97, 0.18);
+    --border-soft: rgba(225, 244, 243, 0.18);
+    --border-strong: rgba(112, 108, 97, 0.42);
+    --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.22);
+    --shadow-brand: 0 14px 35px rgba(112, 108, 97, 0.24);
+    --error: #f0b1b1;
 }
 
 *{
@@ -1836,6 +1843,258 @@ section{
         transform: none;
         box-shadow: 0 0 20px rgba(95, 141, 78, 0.3);
     }
+}
+
+/* ============= Updated Site Theme ============= */
+
+body,
+.contact-section,
+.skills-section,
+.services-section,
+.intro-section {
+    background:
+        radial-gradient(circle at top, rgba(225, 244, 243, 0.09), transparent 30%),
+        linear-gradient(180deg, var(--bg-base) 0%, var(--bg-base-deep) 100%);
+    color: var(--text-main);
+}
+
+nav {
+    background: rgba(51, 51, 51, 0.9);
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.logo,
+.nav-toggle,
+.hamburg,
+.cancel,
+.nav-container .links a,
+.dropdown .links a,
+.main-container .content,
+.contact-info h2,
+.contact-text h4,
+.social-links-contact h4,
+.form-group label,
+.skills-header h1,
+.skills-category h2,
+.skill-name,
+.certifications-section h2,
+.cert-content h3,
+.services-header h1,
+.service-content h3,
+.process-section h2,
+.step-content h3,
+.cta-section h2,
+.intro-header h1,
+.intro-card h3,
+.timeline-content h3 {
+    color: var(--text-main);
+}
+
+.contact-info > p,
+.contact-text p,
+.form-group input::placeholder,
+.form-group textarea::placeholder,
+.skills-header p,
+.cert-content p,
+.services-header p,
+.service-content p,
+.service-features li,
+.step-content p,
+.cta-section p,
+.intro-header p,
+.intro-card p,
+.intro-card ul li,
+.stat-label,
+.timeline-content p,
+.content p {
+    color: var(--text-subtle);
+}
+
+.logo span,
+.nav-container .links a:hover,
+.content h1 span,
+.typewriter span,
+.social-links i,
+.contact-text a,
+.skills-header h1 span,
+.skills-category h2 i,
+.skill-percentage,
+.certifications-section h2 i,
+.services-header h1 span,
+.service-features li i,
+.price,
+.process-section h2 i,
+.intro-header h1 span,
+.intro-card ul li i,
+.stat-number,
+.timeline-content h4,
+.active-link {
+    color: var(--brand) !important;
+    text-shadow: none;
+}
+
+.contact-info h2,
+.skills-header h1,
+.skills-category h2,
+.certifications-section h2,
+.services-header h1,
+.process-section h2,
+.price,
+.intro-header h1,
+.stat-number,
+.timeline-content h4 {
+    text-shadow: none;
+}
+
+.nav-container .links a:hover,
+.active-link {
+    border-bottom-color: var(--brand) !important;
+}
+
+.dropdown {
+    background: rgba(51, 51, 51, 0.95);
+    box-shadow: var(--shadow-soft);
+}
+
+.dropdown .links a:hover {
+    background-color: var(--brand);
+    color: var(--text-main);
+}
+
+.main-container .image {
+    box-shadow: 0 0 45px rgba(225, 244, 243, 0.16);
+}
+
+.social-links i:hover {
+    filter: drop-shadow(0 0 10px rgba(225, 244, 243, 0.35));
+}
+
+.content button,
+.submit-btn,
+.cta-button,
+.contact-icon,
+.social-icons a,
+.cert-icon,
+.service-icon,
+.step-number,
+.intro-card-icon,
+.timeline-dot {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    color: var(--text-main);
+}
+
+.content button,
+.submit-btn,
+.cta-button,
+.contact-icon,
+.social-icons a,
+.cert-icon,
+.service-icon,
+.step-number,
+.intro-card-icon {
+    box-shadow: var(--shadow-brand);
+}
+
+.content button,
+.submit-btn,
+.cta-button {
+    border: 1px solid transparent;
+}
+
+.content button:hover,
+.submit-btn:hover,
+.cta-button:hover {
+    background: transparent;
+    border-color: var(--brand);
+    box-shadow: 0 0 0 1px var(--border-strong), 0 16px 35px rgba(112, 108, 97, 0.22);
+}
+
+.social-icons a:hover,
+.service-card:hover,
+.intro-card:hover,
+.certification-item:hover {
+    box-shadow: 0 18px 40px rgba(112, 108, 97, 0.18);
+}
+
+.contact-form-wrapper,
+.skills-category,
+.certification-item,
+.service-card,
+.cta-section,
+.intro-card,
+.timeline-content {
+    background: var(--bg-surface);
+    border-color: var(--border-soft);
+    box-shadow: var(--shadow-soft);
+}
+
+.service-card:hover,
+.intro-card:hover,
+.certification-item:hover,
+.timeline-content,
+.contact-form-wrapper,
+.skills-category,
+.cta-section {
+    border-color: var(--border-strong);
+}
+
+.form-group input,
+.form-group textarea,
+.skill-bar {
+    background: var(--bg-surface-strong);
+    border-color: var(--border-soft);
+    color: var(--text-main);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--brand);
+    background: rgba(225, 244, 243, 0.12);
+    box-shadow: 0 0 0 3px rgba(225, 244, 243, 0.08);
+}
+
+.contact-text a:hover {
+    text-shadow: none;
+    color: var(--text-muted);
+}
+
+.skill-fill {
+    background: linear-gradient(90deg, var(--brand) 0%, #E1F4F3 100%);
+    box-shadow: 0 0 18px rgba(225, 244, 243, 0.2);
+}
+
+.service-price {
+    border-top-color: var(--border-soft);
+}
+
+.timeline::before {
+    background: linear-gradient(to bottom, var(--brand), rgba(225, 244, 243, 0.08));
+}
+
+.timeline-dot {
+    box-shadow: 0 0 15px rgba(112, 108, 97, 0.35);
+}
+
+.form-message.success {
+    background: rgba(225, 244, 243, 0.12);
+    color: var(--text-muted);
+    border-color: var(--border-soft);
+}
+
+.error-message,
+.form-message.error {
+    color: var(--error);
+}
+
+.form-message.error {
+    background: rgba(240, 177, 177, 0.12);
+    border-color: rgba(240, 177, 177, 0.35);
+}
+
+.form-group input.input-error,
+.form-group textarea.input-error {
+    border-color: rgba(240, 177, 177, 0.45);
+    background: rgba(240, 177, 177, 0.08);
 }
 
 /* High DPI displays */
