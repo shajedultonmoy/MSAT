@@ -1,11 +1,33 @@
 function hamburg(){
-    const navbar = document.querySelector('.dropdown');
-    navbar.style.transform = 'translateY(0px)';
+    setMobileMenu(true);
 }
 
 function cancel(){
+    setMobileMenu(false);
+}
+
+function setMobileMenu(isOpen) {
     const navbar = document.querySelector('.dropdown');
-    navbar.style.transform = 'translateY(-500px)';
+    const openButton = document.querySelector('.hamburg');
+
+    if (!navbar) {
+        return;
+    }
+
+    navbar.style.transform = isOpen ? 'translateY(0px)' : 'translateY(-500px)';
+    navbar.setAttribute('aria-hidden', String(!isOpen));
+
+    if (openButton) {
+        openButton.setAttribute('aria-expanded', String(isOpen));
+    }
+}
+
+function getApiBaseUrl() {
+    if (window.location.protocol === 'file:') {
+        return 'http://localhost:3000';
+    }
+
+    return window.location.origin;
 }
 
 const texts = [
@@ -44,8 +66,41 @@ function eraseText(){
 }
 
 // Initialize typewriter only if the element exists (on home page)
-if(textElements) {
-    window.onload = typeWriter;
+if (textElements) {
+    window.addEventListener('load', typeWriter);
+}
+
+// Skill bar animation functionality
+function animateSkillBars() {
+    const skillFills = document.querySelectorAll('.skill-fill');
+
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const skillFill = entry.target;
+                const width = skillFill.style.width;
+                skillFill.style.width = '0%';
+                setTimeout(() => {
+                    skillFill.style.width = width;
+                }, 200);
+                observer.unobserve(skillFill);
+            }
+        });
+    }, observerOptions);
+
+    skillFills.forEach(skillFill => {
+        observer.observe(skillFill);
+    });
+}
+
+// Initialize skill bar animations only if skill elements exist (on skills page)
+if (document.querySelectorAll('.skill-fill').length > 0) {
+    window.addEventListener('load', animateSkillBars);
 }
 
 // ============= Contact Form Validation and Handling =============
@@ -188,25 +243,85 @@ function handleFormSubmit(e) {
         document.getElementById('messageError').classList.remove('show');
     }
     
-    // If no errors, show success message and reset form
+    // If no errors, submit to backend API
     if (!hasError) {
-        formMessage.classList.add('success');
-        formMessage.textContent = '✓ Message sent successfully! I\'ll get back to you soon.';
+        // Show loading state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
         
-        // Reset form
-        form.reset();
-        
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-            formMessage.classList.remove('success');
-            formMessage.textContent = '';
-        }, 5000);
+        // Submit to backend API
+        fetch(`${getApiBaseUrl()}/api/contact`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: nameInput.value,
+                email: emailInput.value,
+                phone: phoneInput.value,
+                subject: subjectInput.value,
+                message: messageInput.value
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                formMessage.classList.add('success');
+                formMessage.textContent = '✓ ' + data.message;
+                form.reset();
+            } else {
+                formMessage.classList.add('error');
+                formMessage.textContent = data.message || 'Failed to send message. Please try again.';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            formMessage.classList.add('error');
+            formMessage.textContent = 'Network error. Please check your connection and try again.';
+        })
+        .finally(() => {
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.remove('success', 'error');
+                formMessage.textContent = '';
+            }, 5000);
+        });
     }
 }
 
 // Initialize contact form if it exists
 document.addEventListener('DOMContentLoaded', function() {
+    const dropdown = document.querySelector('.dropdown');
+    const dropdownLinks = document.querySelectorAll('.dropdown .links a');
     const contactForm = document.getElementById('contactForm');
+
+    if (dropdown) {
+        dropdown.setAttribute('aria-hidden', 'true');
+    }
+
+    dropdownLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            cancel();
+        });
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            cancel();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+            cancel();
+        }
+    });
     
     if (contactForm) {
         // Add submit listener

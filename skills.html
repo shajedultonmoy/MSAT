@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Skills - MSAT Portfolio</title>
+</head>
+<body class="inner-page">
+    <nav>
+        <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+            Shajedul Alam <span>Tonmoy</span>
+        </div>
+        <div class="nav-container">
+            <div class="links">
+                <a href="index.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">Home</a>
+                <a href="skills.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200" class="active-link">Skills</a>
+                <a href="introduction.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">Introduction</a>
+                <a href="services.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">Services</a>
+                <a href="contact.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">Contact</a>
+            </div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="skills.html" class="active-link">Skills</a>
+                <a href="introduction.html">Introduction</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="skills-section">
+        <div class="skills-container">
+            <div class="skills-header" data-aos="fade-down" data-aos-duration="1500">
+                <h1>My <span>Skills</span></h1>
+                <p>Here are the technical skills and expertise I've developed through my professional journey and continuous learning.</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Technical Skills -->
+                <div class="skills-category" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="200">
+                    <h2><i class="fas fa-code"></i> Technical Skills</h2>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Linux/Unix Administration</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Windows Server</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Network Administration</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Cloud Computing (AWS/Azure)</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">DevOps Tools</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programming & Scripting -->
+                <div class="skills-category" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="400">
+                    <h2><i class="fas fa-terminal"></i> Programming & Scripting</h2>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Bash/Shell Scripting</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">PowerShell</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">SQL</span>
+                            <span class="skill-percentage">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="skills-category" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600">
+                    <h2><i class="fas fa-tools"></i> Tools & Technologies</h2>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Docker & Containerization</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Git & Version Control</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Monitoring Tools</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">CI/CD Pipelines</span>
+                            <span class="skill-percentage">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skills-category" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="800">
+                    <h2><i class="fas fa-users"></i> Professional Skills</h2>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Problem Solving</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Technical Support</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Communication</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Project Management</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <div class="certifications-section" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000">
+                <h2><i class="fas fa-certificate"></i> Certifications & Training</h2>
+                <div class="certifications-grid">
+                    <div class="certification-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3>Red Hat Linux Administration</h3>
+                            <p>Professional training in Linux system administration and server management</p>
+                        </div>
+                    </div>
+                    <div class="certification-item">
+                        <div class="cert-icon">
+                            <i class="fab fa-windows"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3>Windows Server Administration</h3>
+                            <p>Comprehensive training in Windows Server management and Active Directory</p>
+                        </div>
+                    </div>
+                    <div class="certification-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3>Graphic Design</h3>
+                            <p>Professional graphic design skills for creating visual content</p>
+                        </div>
+                    </div>
+                    <div class="certification-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3>Network Fundamentals</h3>
+                            <p>Understanding of networking concepts and infrastructure management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:0});
+    </script>
+</body>
+</html>
