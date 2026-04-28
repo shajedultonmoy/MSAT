@@ -1,8 +1,8 @@
-function hamburg(){
+function hamburg() {
     setMobileMenu(true);
 }
 
-function cancel(){
+function cancel() {
     setMobileMenu(false);
 }
 
@@ -14,7 +14,11 @@ function setMobileMenu(isOpen) {
         return;
     }
 
-    navbar.style.transform = isOpen ? 'translateY(0px)' : 'translateY(-500px)';
+    if (isOpen) {
+        navbar.classList.add('active');
+    } else {
+        navbar.classList.remove('active');
+    }
     navbar.setAttribute('aria-hidden', String(!isOpen));
 
     if (openButton) {
@@ -31,7 +35,7 @@ function getApiBaseUrl() {
 }
 
 const texts = [
-    "DEVOPS ENGINEER",
+    "DevOps Engineer",
     "System Administrator",
 ];
 
@@ -42,23 +46,23 @@ const textElements = document.querySelector('.typewriter-text');
 let textIndex = 0;
 let characterIndex = 0;
 
-function typeWriter(){
-    if(characterIndex < texts[textIndex].length){
+function typeWriter() {
+    if (characterIndex < texts[textIndex].length) {
         textElements.innerHTML += texts[textIndex].charAt(characterIndex);
         characterIndex++;
         setTimeout(typeWriter, speed);
     }
-    else{
+    else {
         setTimeout(eraseText, 1000);
     }
 }
 
-function eraseText(){
-    if(textElements.innerHTML.length > 0){
+function eraseText() {
+    if (textElements.innerHTML.length > 0) {
         textElements.innerHTML = textElements.innerHTML.slice(0, -1);
         setTimeout(eraseText, 50);
     }
-    else{
+    else {
         textIndex = (textIndex + 1) % texts.length;
         characterIndex = 0;
         setTimeout(typeWriter, 500);
@@ -153,9 +157,9 @@ function validateMessage(message) {
 function clearFieldError(fieldId, errorId) {
     const field = document.getElementById(fieldId);
     const errorSpan = document.getElementById(errorId);
-    
+
     if (field) {
-        field.addEventListener('input', function() {
+        field.addEventListener('input', function () {
             field.classList.remove('input-error');
             errorSpan.classList.remove('show');
             errorSpan.textContent = '';
@@ -166,7 +170,7 @@ function clearFieldError(fieldId, errorId) {
 // Form submission handler
 function handleFormSubmit(e) {
     e.preventDefault();
-    
+
     // Get form elements
     const form = document.getElementById('contactForm');
     const nameInput = document.getElementById('name');
@@ -175,14 +179,14 @@ function handleFormSubmit(e) {
     const subjectInput = document.getElementById('subject');
     const messageInput = document.getElementById('message');
     const formMessage = document.getElementById('formMessage');
-    
+
     // Clear previous messages
     formMessage.classList.remove('success', 'error');
     formMessage.textContent = '';
-    
+
     // Validate all fields
     let hasError = false;
-    
+
     // Name validation
     const nameError = validateName(nameInput.value);
     if (nameError) {
@@ -194,7 +198,7 @@ function handleFormSubmit(e) {
         nameInput.classList.remove('input-error');
         document.getElementById('nameError').classList.remove('show');
     }
-    
+
     // Email validation
     const emailError = validateEmail(emailInput.value);
     if (emailError) {
@@ -206,7 +210,7 @@ function handleFormSubmit(e) {
         emailInput.classList.remove('input-error');
         document.getElementById('emailError').classList.remove('show');
     }
-    
+
     // Phone validation
     const phoneError = validatePhone(phoneInput.value);
     if (phoneError) {
@@ -218,7 +222,7 @@ function handleFormSubmit(e) {
         phoneInput.classList.remove('input-error');
         document.getElementById('phoneError').classList.remove('show');
     }
-    
+
     // Subject validation
     const subjectError = validateSubject(subjectInput.value);
     if (subjectError) {
@@ -230,7 +234,7 @@ function handleFormSubmit(e) {
         subjectInput.classList.remove('input-error');
         document.getElementById('subjectError').classList.remove('show');
     }
-    
+
     // Message validation
     const messageError = validateMessage(messageInput.value);
     if (messageError) {
@@ -242,7 +246,7 @@ function handleFormSubmit(e) {
         messageInput.classList.remove('input-error');
         document.getElementById('messageError').classList.remove('show');
     }
-    
+
     // If no errors, submit to backend API
     if (!hasError) {
         // Show loading state
@@ -250,7 +254,7 @@ function handleFormSubmit(e) {
         const originalBtnText = submitBtn.textContent;
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
-        
+
         // Submit to backend API
         fetch(`${getApiBaseUrl()}/api/contact`, {
             method: 'POST',
@@ -265,38 +269,38 @@ function handleFormSubmit(e) {
                 message: messageInput.value
             })
         })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                formMessage.classList.add('success');
-                formMessage.textContent = '✓ ' + data.message;
-                form.reset();
-            } else {
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    formMessage.classList.add('success');
+                    formMessage.textContent = '✓ ' + data.message;
+                    form.reset();
+                } else {
+                    formMessage.classList.add('error');
+                    formMessage.textContent = data.message || 'Failed to send message. Please try again.';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
                 formMessage.classList.add('error');
-                formMessage.textContent = data.message || 'Failed to send message. Please try again.';
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            formMessage.classList.add('error');
-            formMessage.textContent = 'Network error. Please check your connection and try again.';
-        })
-        .finally(() => {
-            // Reset button state
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                formMessage.classList.remove('success', 'error');
-                formMessage.textContent = '';
-            }, 5000);
-        });
+                formMessage.textContent = 'Network error. Please check your connection and try again.';
+            })
+            .finally(() => {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.classList.remove('success', 'error');
+                    formMessage.textContent = '';
+                }, 5000);
+            });
     }
 }
 
 // Initialize contact form if it exists
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const dropdown = document.querySelector('.dropdown');
     const dropdownLinks = document.querySelectorAll('.dropdown .links a');
     const contactForm = document.getElementById('contactForm');
@@ -322,11 +326,11 @@ document.addEventListener('DOMContentLoaded', function() {
             cancel();
         }
     });
-    
+
     if (contactForm) {
         // Add submit listener
         contactForm.addEventListener('submit', handleFormSubmit);
-        
+
         // Add input listeners to clear errors
         clearFieldError('name', 'nameError');
         clearFieldError('email', 'emailError');
@@ -335,4 +339,3 @@ document.addEventListener('DOMContentLoaded', function() {
         clearFieldError('message', 'messageError');
     }
 });
-

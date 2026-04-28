@@ -46,6 +46,10 @@ The server will start on `http://localhost:3000`
 |--------|----------|-------------|
 | POST | `/api/contact` | Submit contact form |
 | GET | `/api/contact` | Get all contacts (admin) |
+| GET | `/api/projects` | Fetch project portfolio data |
+| GET | `/api/skills` | Fetch skills and certifications data |
+| GET | `/api/services` | Fetch services, process, and CTA data |
+| GET | `/api/introduction` | Fetch introduction page data |
 | GET | `/api/health` | Health check |
 
 ## Request/Response Examples

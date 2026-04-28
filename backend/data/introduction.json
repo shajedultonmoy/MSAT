@@ -1,0 +1,51 @@
+{
+  "stats": [
+    { "value": "3+", "label": "Years Experience" },
+    { "value": "50+", "label": "Projects Completed" },
+    { "value": "30+", "label": "Happy Clients" },
+    { "value": "10+", "label": "Certifications" }
+  ],
+  "cards": [
+    {
+      "icon": "fas fa-user",
+      "title": "Who I Am",
+      "description": "I am an IT professional with a Diploma in Computer Engineering and ongoing Bachelor's studies in Computer Engineering. Currently serving as a Junior Specialist IT & Software at Unified Information Technology Limited."
+    },
+    {
+      "icon": "fas fa-bullseye",
+      "title": "What I Do",
+      "description": "I specialize in:\n- Hardware troubleshooting & maintenance\n- Software installation & configuration\n- Server administration\n- Technical client support"
+    },
+    {
+      "icon": "fas fa-heart",
+      "title": "My Passion",
+      "description": "I'm passionate about testing and learning new technologies. I love solving complex problems and helping others navigate the ever-evolving world of IT."
+    }
+  ],
+  "timeline": [
+    {
+      "period": "2023 - Present",
+      "title": "Junior Specialist IT & Software",
+      "description": "Unified Information Technology Limited"
+    },
+    {
+      "period": "2022 - 2023",
+      "title": "Professional Training",
+      "description": "Completed training in Windows Server, Red Hat Linux, and Graphic Design"
+    },
+    {
+      "period": "2024 - Present",
+      "title": "Bachelor's in Computer Engineering",
+      "description": "Ongoing studies in Computer Engineering"
+    },
+    {
+      "period": "2019 - 2023",
+      "title": "Diploma in Computer Engineering",
+      "description": "Completed diploma with focus on hardware and software systems"
+    }
+  ],
+  "cta": {
+      "text": "Let's Work Together",
+      "url": "../contact.html"
+  }
+}

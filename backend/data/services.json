@@ -1,0 +1,109 @@
+{
+  "services": [
+    {
+      "title": "IT Infrastructure Management",
+      "description": "Complete server administration, network setup, and infrastructure monitoring to ensure optimal system performance and reliability.",
+      "features": [
+        "Server setup & configuration",
+        "Network infrastructure design",
+        "Performance monitoring",
+        "Backup & disaster recovery"
+      ],
+      "price": "Starting at $50/hour",
+      "icon": "fas fa-server"
+    },
+    {
+      "title": "System Administration",
+      "description": "Expert Linux and Windows server administration, including troubleshooting, optimization, and maintenance services.",
+      "features": [
+        "Linux/Unix administration",
+        "Windows Server management",
+        "System optimization",
+        "Security hardening"
+      ],
+      "price": "Starting at $45/hour",
+      "icon": "fas fa-cogs"
+    },
+    {
+      "title": "Cloud Solutions & Migration",
+      "description": "Migrate to cloud platforms, set up cloud infrastructure, and implement scalable cloud-based solutions for your business.",
+      "features": [
+        "Cloud migration planning",
+        "AWS/Azure setup & management",
+        "Cloud security implementation",
+        "Cost optimization"
+      ],
+      "price": "Starting at $60/hour",
+      "icon": "fas fa-cloud"
+    },
+    {
+      "title": "DevOps Implementation",
+      "description": "Implement CI/CD pipelines, containerization, and automation solutions to streamline your development and deployment processes.",
+      "features": [
+        "CI/CD pipeline setup",
+        "Docker containerization",
+        "Infrastructure as Code",
+        "Automation scripting"
+      ],
+      "price": "Starting at $65/hour",
+      "icon": "fas fa-code-branch"
+    },
+    {
+      "title": "Technical Support & Consulting",
+      "description": "24/7 technical support, troubleshooting, and consulting services to keep your systems running smoothly and efficiently.",
+      "features": [
+        "24/7 technical support",
+        "Remote troubleshooting",
+        "IT consulting",
+        "System maintenance"
+      ],
+      "price": "Starting at $40/hour",
+      "icon": "fas fa-headset"
+    },
+    {
+      "title": "Network Administration",
+      "description": "Design, implement, and maintain robust network infrastructure with security best practices and performance optimization.",
+      "features": [
+        "Network design & setup",
+        "Firewall configuration",
+        "VPN implementation",
+        "Network security"
+      ],
+      "price": "Starting at $55/hour",
+      "icon": "fas fa-network-wired"
+    }
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "Consultation",
+      "description": "Understanding your requirements and assessing your current infrastructure to develop a tailored solution."
+    },
+    {
+      "step": "02",
+      "title": "Planning",
+      "description": "Creating a detailed implementation plan with timelines, milestones, and risk assessment."
+    },
+    {
+      "step": "03",
+      "title": "Implementation",
+      "description": "Executing the solution with minimal disruption to your operations and regular progress updates."
+    },
+    {
+      "step": "04",
+      "title": "Testing & Optimization",
+      "description": "Thorough testing and performance optimization to ensure everything works perfectly."
+    },
+    {
+      "step": "05",
+      "title": "Support & Maintenance",
+      "description": "Ongoing support and maintenance to keep your systems running smoothly."
+    }
+  ],
+  "cta": {
+    "title": "Ready to Get Started?",
+    "description": "Let's discuss how I can help optimize your IT infrastructure and drive your business forward.",
+    "buttonText": "Get In Touch",
+    "buttonUrl": "../contact.html"
+  }
+}

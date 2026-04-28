@@ -4,6 +4,10 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const contactRoutes = require('./routes/contact');
+const projectRoutes = require('./routes/projects');
+const skillsRoutes = require('./routes/skills');
+const servicesRoutes = require('./routes/services');
+const introductionRoutes = require('./routes/introduction');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,6 +22,10 @@ app.use(express.static(path.join(__dirname, '../')));
 
 // API Routes
 app.use('/api/contact', contactRoutes);
+app.use('/api/projects', projectRoutes);
+app.use('/api/skills', skillsRoutes);
+app.use('/api/services', servicesRoutes);
+app.use('/api/introduction', introductionRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

@@ -1,0 +1,63 @@
+{
+  "skills": [
+    {
+      "category": "Technical Skills",
+      "items": [
+        { "name": "Linux/Unix Administration", "level": "90%" },
+        { "name": "Windows Server", "level": "85%" },
+        { "name": "Network Administration", "level": "80%" },
+        { "name": "Cloud Computing (AWS/Azure)", "level": "75%" },
+        { "name": "DevOps Tools", "level": "70%" }
+      ]
+    },
+    {
+      "category": "Programming & Scripting",
+      "items": [
+        { "name": "Bash/Shell Scripting", "level": "85%" },
+        { "name": "Python", "level": "75%" },
+        { "name": "PowerShell", "level": "70%" },
+        { "name": "SQL", "level": "65%" }
+      ]
+    },
+    {
+      "category": "Tools & Technologies",
+      "items": [
+        { "name": "Docker & Containerization", "level": "75%" },
+        { "name": "Git & Version Control", "level": "80%" },
+        { "name": "Monitoring Tools", "level": "70%" },
+        { "name": "CI/CD Pipelines", "level": "65%" }
+      ]
+    },
+    {
+      "category": "Professional Skills",
+      "items": [
+        { "name": "Problem Solving", "level": "90%" },
+        { "name": "Technical Support", "level": "85%" },
+        { "name": "Communication", "level": "80%" },
+        { "name": "Project Management", "level": "70%" }
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Red Hat Linux Administration",
+      "description": "Professional training in Linux system administration and server management",
+      "icon": "fas fa-server"
+    },
+    {
+      "title": "Windows Server Administration",
+      "description": "Comprehensive training in Windows Server management and Active Directory",
+      "icon": "fab fa-windows"
+    },
+    {
+      "title": "Graphic Design",
+      "description": "Professional graphic design skills for creating visual content",
+      "icon": "fas fa-palette"
+    },
+    {
+      "title": "Network Fundamentals",
+      "description": "Understanding of networking concepts and infrastructure management",
+      "icon": "fas fa-network-wired"
+    }
+  ]
+}

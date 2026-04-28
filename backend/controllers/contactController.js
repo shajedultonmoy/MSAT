@@ -34,8 +34,10 @@ exports.submitContact = async (req, res) => {
         // Check validation errors
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
+            const firstError = errors.array()[0];
             return res.status(400).json({
                 success: false,
+                message: firstError.msg,
                 errors: errors.array()
             });
         }
@@ -58,31 +60,39 @@ exports.submitContact = async (req, res) => {
         // Save to JSON file for persistence
         saveContactsToFile();
 
-        // Send email notification
-        try {
-            const transporter = createTransporter();
-            
-            await transporter.sendMail({
-                from: process.env.EMAIL_USER || 'tonmoyshajedul@gmail.com',
-                to: 'tonmoyshajedul@gmail.com',
-                subject: `New Contact: ${subject}`,
-                html: `
-                    <h2>New Contact Form Submission</h2>
-                    <p><strong>Name:</strong> ${name}</p>
-                    <p><strong>Email:</strong> ${email}</p>
-                    <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-                    <p><strong>Subject:</strong> ${subject}</p>
-                    <p><strong>Message:</strong></p>
-                    <p>${message}</p>
-                    <hr>
-                    <p><small>Sent from MSAT Portfolio</small></p>
-                `
-            });
+        // Send email notification if credentials are configured
+        const emailUser = process.env.EMAIL_USER;
+        const emailPass = process.env.EMAIL_PASS;
+        const emailConfigured = emailUser && emailPass && !emailPass.includes('your-app-password');
 
-            console.log('Email sent successfully');
-        } catch (emailError) {
-            console.error('Email sending failed:', emailError.message);
-            // Continue even if email fails - contact is still saved
+        if (emailConfigured) {
+            try {
+                const transporter = createTransporter();
+                
+                await transporter.sendMail({
+                    from: emailUser,
+                    to: emailUser,
+                    subject: `New Contact: ${subject}`,
+                    html: `
+                        <h2>New Contact Form Submission</h2>
+                        <p><strong>Name:</strong> ${name}</p>
+                        <p><strong>Email:</strong> ${email}</p>
+                        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+                        <p><strong>Subject:</strong> ${subject}</p>
+                        <p><strong>Message:</strong></p>
+                        <p>${message}</p>
+                        <hr>
+                        <p><small>Sent from MSAT Portfolio</small></p>
+                    `
+                });
+
+                console.log('Email sent successfully');
+            } catch (emailError) {
+                console.error('Email sending failed:', emailError.message);
+                // Continue even if email fails - contact is still saved
+            }
+        } else {
+            console.warn('Email notification skipped: EMAIL_USER or EMAIL_PASS is not configured properly.');
         }
 
         res.status(201).json({

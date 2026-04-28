@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Skills - MSAT Portfolio</title>
 </head>
+
 <body class="inner-page">
     <nav>
         <a href="index.html" class="logo" data-aos="zoom-in" data-aos-duration="1500" aria-label="Go to home page">
@@ -16,21 +18,31 @@
         <div class="nav-container">
             <div class="links">
                 <a href="index.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">Home</a>
-                <a href="skills.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200" class="active-link">Skills</a>
-                <a href="introduction.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">Introduction</a>
+                <a href="skills.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"
+                    class="active-link">Skills</a>
+                <a href="introduction.html" data-aos="fade-up" data-aos-duration="1500"
+                    data-aos-delay="300">Introduction</a>
+                <a href="index.html#projects" data-aos="fade-up" data-aos-duration="1500"
+                    data-aos-delay="400">Projects</a>
                 <a href="services.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">Services</a>
-                <a href="contact.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">Contact</a>
+                <a href="contact.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600">Contact</a>
             </div>
         </div>
-        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-        <div class="dropdown">
+        <button type="button" class="nav-toggle hamburg" aria-label="Open navigation menu" aria-expanded="false"
+            onclick="hamburg()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="dropdown" aria-hidden="true">
             <div class="links">
                 <a href="index.html">Home</a>
                 <a href="skills.html" class="active-link">Skills</a>
                 <a href="introduction.html">Introduction</a>
+                <a href="index.html#projects">Projects</a>
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+                <button type="button" class="nav-toggle cancel" aria-label="Close navigation menu" onclick="cancel()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -39,7 +51,8 @@
         <div class="skills-container">
             <div class="skills-header" data-aos="fade-down" data-aos-duration="1500">
                 <h1>My <span>Skills</span></h1>
-                <p>Here are the technical skills and expertise I've developed through my professional journey and continuous learning.</p>
+                <p>Here are the technical skills and expertise I've developed through my professional journey and
+                    continuous learning.</p>
             </div>
 
             <div class="skills-grid">
@@ -265,7 +278,8 @@
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init({offset:0});
+        AOS.init({ offset: 0 });
     </script>
 </body>
+
 </html>
