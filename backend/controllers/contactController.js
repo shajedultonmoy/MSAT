@@ -1,6 +1,6 @@
 // filepath: backend/controllers/contactController.js
 const nodemailer = require('nodemailer');
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
 const { validationResult } = require('express-validator');
 
@@ -22,8 +22,8 @@ const createTransporter = () => {
     return nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.EMAIL_USER || 'tonmoyshajedul@gmail.com',
-            pass: process.env.EMAIL_PASS || 'your-app-password'
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         }
     });
 };
@@ -63,7 +63,7 @@ exports.submitContact = async (req, res) => {
         // Send email notification if credentials are configured
         const emailUser = process.env.EMAIL_USER;
         const emailPass = process.env.EMAIL_PASS;
-        const emailConfigured = emailUser && emailPass && !emailPass.includes('your-app-password');
+        const emailConfigured = emailUser && emailPass;
 
         if (emailConfigured) {
             try {
@@ -126,41 +126,30 @@ exports.getAllContacts = (req, res) => {
 };
 
 // Helper function to save contacts to file
-function saveContactsToFile() {
+async function saveContactsToFile() {
     const dataPath = path.join(__dirname, '../data/contacts.json');
 
     // Ensure data directory exists
     const dataDir = path.dirname(dataPath);
-    if (!fs.existsSync(dataDir)) {
-        fs.mkdirSync(dataDir, { recursive: true });
+    try {
+        await fs.mkdir(dataDir, { recursive: true });
+        await fs.writeFile(dataPath, JSON.stringify(buildContactStore(), null, 2));
+    } catch (err) {
+        console.error('Failed to save contacts:', err);
     }
-
-    fs.writeFileSync(dataPath, JSON.stringify(buildContactStore(), null, 2));
 }
 
 // Load contacts from file on startup
-function loadContactsFromFile() {
+async function loadContactsFromFile() {
     const dataPath = path.join(__dirname, '../data/contacts.json');
-    if (fs.existsSync(dataPath)) {
-        try {
-            const data = fs.readFileSync(dataPath, 'utf8');
-            const parsedData = JSON.parse(data);
-
-            if (Array.isArray(parsedData)) {
-                contacts = parsedData;
-            } else if (parsedData && Array.isArray(parsedData.contacts)) {
-                contacts = parsedData.contacts;
-            } else {
-                contacts = [];
-            }
-
-            console.log(`Loaded ${contacts.length} contacts from file`);
-        } catch (error) {
-            console.error('Error loading contacts:', error);
-            contacts = [];
-        }
-    } else {
-        saveContactsToFile();
+    try {
+        const data = await fs.readFile(dataPath, 'utf8');
+        const parsedData = JSON.parse(data);
+        contacts = parsedData.contacts || [];
+        console.log(`Loaded ${contacts.length} contacts from file`);
+    } catch (error) {
+        // If file doesn't exist, we just start with empty array
+        contacts = [];
     }
 }
 

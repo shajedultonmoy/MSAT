@@ -56,7 +56,7 @@ const texts = [
     "System Administrator",
 ];
 
-let speed = 100;
+let speed = 60;
 
 const textElements = document.querySelector('.typewriter-text');
 
@@ -71,7 +71,7 @@ function typeWriter() {
         setTimeout(typeWriter, speed);
     }
     else {
-        setTimeout(eraseText, 1000);
+        setTimeout(eraseText, 800);
     }
 }
 
@@ -79,12 +79,12 @@ function eraseText() {
     if (!textElements) return; // Ensure element exists
     if (textElements.innerHTML.length > 0) {
         textElements.innerHTML = textElements.innerHTML.slice(0, -1);
-        setTimeout(eraseText, 50);
+        setTimeout(eraseText, 30);
     }
     else {
         textIndex = (textIndex + 1) % texts.length;
         characterIndex = 0;
-        setTimeout(typeWriter, 500);
+        setTimeout(typeWriter, 300);
     }
 }
 
@@ -98,7 +98,7 @@ function animateSkillBars() {
     const skillFills = document.querySelectorAll('.skill-fill');
 
     const observerOptions = {
-        threshold: 0.5,
+        threshold: 0.2,
         rootMargin: '0px 0px -50px 0px'
     };
 
@@ -110,7 +110,7 @@ function animateSkillBars() {
                 skillFill.style.width = '0%';
                 setTimeout(() => {
                     skillFill.style.width = width;
-                }, 200);
+                }, 100);
                 observer.unobserve(skillFill);
             }
         });
@@ -270,11 +270,8 @@ function handleFormSubmit(e) {
     if (!hasError) {
         // Show loading state
         const submitBtn = form.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
-
-        // Submit to backend API
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         fetch(`${getApiBaseUrl()}/api/contact`, {
             method: 'POST',
             headers: {
@@ -307,9 +304,8 @@ function handleFormSubmit(e) {
             .finally(() => {
                 // Reset button state
                 submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
+                submitBtn.innerHTML = originalBtnText;
 
-                // Hide message after 5 seconds
                 setTimeout(() => {
                     formMessage.classList.remove('success', 'error');
                     formMessage.textContent = '';

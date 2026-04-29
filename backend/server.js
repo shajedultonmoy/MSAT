@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const bodyParser = require('body-parser'); // For parsing application/json and application/x-www-form-urlencoded
 const { check } = require('express-validator'); // For server-side validation
 
 // Import the contact controller
@@ -14,8 +13,8 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true })); // For parsing URL-encoded data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // For parsing URL-encoded data
 
 // Contact Form Endpoint
 app.post(
@@ -33,6 +32,12 @@ app.post(
 
 // Health check
 app.get('/', (req, res) => res.send('MSAT Portfolio Backend Running...'));
+
+// Global Error Handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
