@@ -26,6 +26,23 @@ function setMobileMenu(isOpen) {
     }
 }
 
+// Navbar scroll effect & Back to Top visibility
+function handleScroll() {
+    const nav = document.querySelector('nav');
+    const backToTop = document.querySelector('.back-to-top');
+
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+
+    if (backToTop) {
+        if (window.scrollY > 500) backToTop.classList.add('show');
+        else backToTop.classList.remove('show');
+    }
+}
+
 function getApiBaseUrl() {
     if (window.location.protocol === 'file:') {
         return 'http://localhost:3000';
@@ -47,6 +64,7 @@ let textIndex = 0;
 let characterIndex = 0;
 
 function typeWriter() {
+    if (!textElements) return; // Ensure element exists
     if (characterIndex < texts[textIndex].length) {
         textElements.innerHTML += texts[textIndex].charAt(characterIndex);
         characterIndex++;
@@ -58,6 +76,7 @@ function typeWriter() {
 }
 
 function eraseText() {
+    if (!textElements) return; // Ensure element exists
     if (textElements.innerHTML.length > 0) {
         textElements.innerHTML = textElements.innerHTML.slice(0, -1);
         setTimeout(eraseText, 50);
@@ -298,6 +317,9 @@ function handleFormSubmit(e) {
             });
     }
 }
+
+// Event Listeners
+window.addEventListener('scroll', handleScroll);
 
 // Initialize contact form if it exists
 document.addEventListener('DOMContentLoaded', function () {

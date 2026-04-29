@@ -68,21 +68,27 @@ exports.submitContact = async (req, res) => {
         if (emailConfigured) {
             try {
                 const transporter = createTransporter();
-                
+
                 await transporter.sendMail({
                     from: emailUser,
                     to: emailUser,
                     subject: `New Contact: ${subject}`,
                     html: `
-                        <h2>New Contact Form Submission</h2>
-                        <p><strong>Name:</strong> ${name}</p>
-                        <p><strong>Email:</strong> ${email}</p>
-                        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-                        <p><strong>Subject:</strong> ${subject}</p>
-                        <p><strong>Message:</strong></p>
-                        <p>${message}</p>
-                        <hr>
-                        <p><small>Sent from MSAT Portfolio</small></p>
+                        <div style="font-family: sans-serif; background-color: #F0F9FF; padding: 30px; border-radius: 12px;">
+                            <div style="background-color: #4C3BCF; padding: 20px; border-radius: 10px 10px 0 0; border-bottom: 3px solid #4B70F5;">
+                                <h2 style="margin: 0; color: #ffffff;">New Contact Form Submission</h2>
+                            </div>
+                            <div style="background-color: #ffffff; padding: 25px; border-radius: 0 0 10px 10px; color: #2c3e50; line-height: 1.6;">
+                                <p><strong>Name:</strong> ${name}</p>
+                                <p><strong>Email:</strong> ${email}</p>
+                                <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+                                <p><strong>Subject:</strong> ${subject}</p>
+                                <p style="margin-top: 20px;"><strong>Message:</strong></p>
+                                <div style="background-color: #F8FAFC; padding: 15px; border-left: 5px solid #4C3BCF; font-style: italic;">${message}</div>
+                                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+                                <p style="font-size: 0.8em; color: #777;">Sent from MSAT Portfolio</p>
+                            </div>
+                        </div>
                     `
                 });
 
@@ -122,13 +128,13 @@ exports.getAllContacts = (req, res) => {
 // Helper function to save contacts to file
 function saveContactsToFile() {
     const dataPath = path.join(__dirname, '../data/contacts.json');
-    
+
     // Ensure data directory exists
     const dataDir = path.dirname(dataPath);
     if (!fs.existsSync(dataDir)) {
         fs.mkdirSync(dataDir, { recursive: true });
     }
-    
+
     fs.writeFileSync(dataPath, JSON.stringify(buildContactStore(), null, 2));
 }
 
