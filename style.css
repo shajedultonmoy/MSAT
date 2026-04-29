@@ -212,11 +212,31 @@ section {
     font-weight: 700;
     margin: 10px 0;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .typewriter span {
     color: var(--brand);
     text-shadow: 0 0 10px var(--brand);
+}
+
+.cursor {
+    color: var(--brand);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 .content p {
@@ -312,6 +332,7 @@ section {
     .content .typewriter {
         white-space: normal;
         /* Allow wrap on mobile since screen is too narrow for long titles */
+        justify-content: center;
     }
 
     .main-container .image {
