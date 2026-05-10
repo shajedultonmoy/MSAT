@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md.Shajedul Alam Tonmoy | Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Md.Shajedul Alam Tonmoy (MSAT) - Full Stack Web Developer, IT Support Engineer, and Designer.">
+
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Background Particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar glassmorphism">
+        <div class="container nav-container">
+            <a href="#" class="logo">MS<span>AT</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content reveal">
+                <p class="greeting">Welcome to my universe</p>
+                <h1 class="main-heading">Hi, I'm <span class="gradient-text">Md.Shajedul Alam Tonmoy</span></h1>
+                <h2 class="sub-heading"><span class="typing-text"></span><span class="cursor">|</span></h2>
+                <p class="hero-description">Passionate about building scalable web applications, designing intuitive
+                    user interfaces, and solving complex technical challenges.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary glow-effect">Hire Me</a>
+                    <a href="#" class="btn btn-secondary glass-btn">Download CV</a>
+                </div>
+            </div>
+            <div class="hero-image reveal-right">
+                <div class="image-wrapper glassmorphism">
+                    <div class="floating-avatar">
+                        <!-- Using a placeholder matching the theme, replace with actual image -->
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>About <span class="gradient-text">Me</span></h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text glassmorphism reveal-left">
+                    <p>Hello! I am a dedicated professional with a diverse skill set spanning Full Stack Web
+                        Development, Web Design, IT Support, and DevOps & Cloud Learning. I thrive on UI/UX Creativity
+                        and turning complex problems into elegant, user-centric solutions.</p>
+                    <p>My journey in technology is driven by continuous learning and a passion for crafting premium
+                        digital experiences. Whether I'm configuring servers, designing intuitive interfaces, or writing
+                        robust code, I aim for excellence.</p>
+                </div>
+                <div class="about-stats reveal-right">
+                    <div class="stat-card glassmorphism tilt">
+                        <h3>3+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-card glassmorphism tilt">
+                        <h3>20+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-card glassmorphism tilt">
+                        <h3>5+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="stat-card glassmorphism tilt">
+                        <h3>24/7</h3>
+                        <p>Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>My <span class="gradient-text">Skills</span></h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card glassmorphism tilt reveal">
+                    <i class="fab fa-html5 skill-icon" style="color: #E34F26;"></i>
+                    <h4>HTML</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card glassmorphism tilt reveal" style="transition-delay: 0.1s;">
+                    <i class="fab fa-css3-alt skill-icon" style="color: #1572B6;"></i>
+                    <h4>CSS</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card glassmorphism tilt reveal" style="transition-delay: 0.2s;">
+                    <i class="fab fa-js skill-icon" style="color: #F7DF1E;"></i>
+                    <h4>JavaScript</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card glassmorphism tilt reveal" style="transition-delay: 0.3s;">
+                    <i class="fab fa-react skill-icon" style="color: #61DAFB;"></i>
+                    <h4>React</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card glassmorphism tilt reveal" style="transition-delay: 0.4s;">
+                    <i class="fab fa-node-js skill-icon" style="color: #339933;"></i>
+                    <h4>Node.js</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card glassmorphism tilt reveal" style="transition-delay: 0.5s;">
+                    <i class="fas fa-server skill-icon" style="color: #68A063;"></i>
+                    <h4>Express.js</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card glassmorphism tilt reveal" style="transition-delay: 0.6s;">
+                    <i class="fas fa-leaf skill-icon" style="color: #47A248;"></i>
+                    <h4>MongoDB</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card glassmorphism tilt reveal" style="transition-delay: 0.7s;">
+                    <i class="fab fa-github skill-icon" style="color: #ffffff;"></i>
+                    <h4>Git & GitHub</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card glassmorphism tilt reveal" style="transition-delay: 0.8s;">
+                    <i class="fab fa-linux skill-icon" style="color: #FCC624;"></i>
+                    <h4>Linux</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card glassmorphism tilt reveal" style="transition-delay: 0.9s;">
+                    <i class="fas fa-desktop skill-icon" style="color: #607D8B;"></i>
+                    <h4>VMware</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card glassmorphism tilt reveal" style="transition-delay: 1.0s;">
+                    <i class="fab fa-aws skill-icon" style="color: #FF9900;"></i>
+                    <h4>AWS Basics</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>My <span class="gradient-text">Services</span></h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card glassmorphism tilt reveal">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Building responsive, scalable, and high-performance web applications using modern full-stack
+                        technologies.</p>
+                </div>
+                <div class="service-card glassmorphism tilt reveal" style="transition-delay: 0.1s;">
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Website Design</h3>
+                    <p>Creating visually stunning, user-friendly, and modern UI/UX designs that leave a lasting
+                        impression.</p>
+                </div>
+                <div class="service-card glassmorphism tilt reveal" style="transition-delay: 0.2s;">
+                    <div class="service-icon"><i class="fas fa-headset"></i></div>
+                    <h3>IT Support</h3>
+                    <p>Providing reliable technical assistance, troubleshooting, and system maintenance to ensure smooth
+                        operations.</p>
+                </div>
+                <div class="service-card glassmorphism tilt reveal" style="transition-delay: 0.3s;">
+                    <div class="service-icon"><i class="fas fa-server"></i></div>
+                    <h3>Server Management</h3>
+                    <p>Configuring, managing, and securing Linux and Windows servers for optimal performance and uptime.
+                    </p>
+                </div>
+                <div class="service-card devops-card glassmorphism tilt reveal" style="transition-delay: 0.4s;">
+                    <div class="devops-particles">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                    <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>DevOps</h3>
+                    <p>Building scalable, automated, and efficient infrastructure solutions with cloud technologies,
+                        server management, CI/CD pipelines, virtualization, and deployment automation.</p>
+                    <div class="tech-stack devops-stack">
+                        <span><i class="fab fa-docker"></i> Docker</span>
+                        <span><i class="fab fa-aws"></i> AWS</span>
+                        <span><i class="fab fa-linux"></i> Linux</span>
+                        <span><i class="fas fa-desktop"></i> VMware</span>
+                        <span><i class="fab fa-github"></i> CI/CD</span>
+                    </div>
+                </div>
+                <div class="service-card glassmorphism tilt reveal" style="transition-delay: 0.5s;">
+                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Technical Solutions</h3>
+                    <p>Architecting custom software and infrastructure solutions to meet unique business requirements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Featured <span class="gradient-text">Projects</span></h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1: HospitalX Suite -->
+                <div class="project-card glassmorphism tilt reveal">
+                    <div class="project-particles"><span></span><span></span><span></span></div>
+                    <div class="project-image">
+                        <div class="project-placeholder theme-hospital">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>HospitalX Suite</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>HospitalX Suite</h3>
+                        <p>A modern hospital management platform with advanced healthcare system features, appointment
+                            management, patient records, and admin dashboard.</p>
+                        <div class="tech-stack">
+                            <span>React</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/shajedultonmoy/HospitalX-Suite.git" target="_blank"
+                                class="btn btn-secondary btn-sm"><i class="fab fa-github"></i> View Repository</a>
+                            <a href="#" target="_blank" class="btn btn-primary btn-sm"><i
+                                    class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Fluxora -->
+                <div class="project-card glassmorphism tilt reveal" style="transition-delay: 0.1s;">
+                    <div class="project-particles"><span></span><span></span><span></span></div>
+                    <div class="project-image">
+                        <div class="project-placeholder theme-fluxora">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Fluxora</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Fluxora</h3>
+                        <p>A creative digital marketing agency website with modern UI, animations, and responsive
+                            interactive design.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/shajedultonmoy/Fluxora.git" target="_blank"
+                                class="btn btn-secondary btn-sm"><i class="fab fa-github"></i>
+                                View Repository</a>
+                            <a href="#" target="_blank" class="btn btn-primary btn-sm"><i
+                                    class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: FreshFork -->
+                <div class="project-card glassmorphism tilt reveal" style="transition-delay: 0.2s;">
+                    <div class="project-particles"><span></span><span></span><span></span></div>
+                    <div class="project-image">
+                        <div class="project-placeholder theme-freshfork">
+                            <i class="fas fa-utensils"></i>
+                            <span>FreshFork</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>FreshFork</h3>
+                        <p>A stylish modern restaurant and food ordering website with clean UI and responsive customer
+                            experience.</p>
+                        <div class="tech-stack">
+                            <span>React</span><span>Tailwind CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/shajedultonmoy/FreshFork.git" target="_blank"
+                                class="btn btn-secondary btn-sm"><i class="fab fa-github"></i>
+                                View Repository</a>
+                            <a href="https://freshfork.onrender.com" target="_blank" class="btn btn-primary btn-sm"><i
+                                    class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: BlueBrick-Properties -->
+                <div class="project-card glassmorphism tilt reveal" style="transition-delay: 0.3s;">
+                    <div class="project-particles"><span></span><span></span><span></span></div>
+                    <div class="project-image">
+                        <div class="project-placeholder theme-bluebrick">
+                            <i class="fas fa-building"></i>
+                            <span>BlueBrick</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>BlueBrick-Properties</h3>
+                        <p>A modern real estate platform showcasing premium properties with elegant property listing
+                            design and smooth interactions.</p>
+                        <div class="tech-stack">
+                            <span>React</span><span>Node.js</span><span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/shajedultonmoy/BlueBrick-Properties.git" target="_blank"
+                                class="btn btn-secondary btn-sm"><i class="fab fa-github"></i>
+                                View Repository</a>
+                            <a href="https://bluebrick-properties.onrender.com" target="_blank"
+                                class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Elevare -->
+                <div class="project-card glassmorphism tilt reveal" style="transition-delay: 0.4s;">
+                    <div class="project-particles"><span></span><span></span><span></span></div>
+                    <div class="project-image">
+                        <div class="project-placeholder theme-elevare">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Elevare</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Elevare</h3>
+                        <p>A premium modern business and branding website with sleek animations and professional
+                            responsive layouts.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/shajedultonmoy/Elevare.git" target="_blank"
+                                class="btn btn-secondary btn-sm"><i class="fab fa-github"></i>
+                                View Repository</a>
+                            <a href="https://elevare-zjnh.onrender.com" target="_blank"
+                                class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Velvet-Brew -->
+                <div class="project-card glassmorphism tilt reveal" style="transition-delay: 0.5s;">
+                    <div class="project-particles"><span></span><span></span><span></span></div>
+                    <div class="project-image">
+                        <div class="project-placeholder theme-velvet">
+                            <i class="fas fa-coffee"></i>
+                            <span>Velvet-Brew</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Velvet-Brew</h3>
+                        <p>A luxury coffee shop and café website with aesthetic visuals, elegant typography, and
+                            immersive modern design.</p>
+                        <div class="tech-stack">
+                            <span>React</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/shajedultonmoy/Velvet-Brew.git" target="_blank"
+                                class="btn btn-secondary btn-sm"><i class="fab fa-github"></i>
+                                View Repository</a>
+                            <a href="https://velvet-brew-9vh2.onrender.com" target="_blank"
+                                class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="timeline-section section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Journey & <span class="gradient-text">Education</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glassmorphism">
+                        <div class="date">Present</div>
+                        <h3>BSc in CSE</h3>
+                        <h4>Bangladesh University</h4>
+                        <p>Pursuing Bachelor of Science in Computer Science and Engineering, focusing on advanced
+                            software engineering and system architecture.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glassmorphism">
+                        <div class="date">Previous</div>
+                        <h3>Diploma Engineering</h3>
+                        <h4>Daffodil Polytechnic Institute</h4>
+                        <p>Completed Diploma with a strong foundation in computer networking, programming fundamentals,
+                            and database management.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glassmorphism">
+                        <div class="date">Experience</div>
+                        <h3>Full Stack Developer & IT Support</h3>
+                        <h4>Freelance & Contract</h4>
+                        <p>Developing web applications for various clients while providing remote IT support, server
+                            management, and technical troubleshooting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Get in <span class="gradient-text">Touch</span></h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info glassmorphism reveal-left">
+                    <h3>Let's build something awesome together!</h3>
+                    <p>Feel free to reach out for collaborations, freelance projects, or just to say hi.</p>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>tonmoyshajedul@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+880 1705-657490</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Dhaka, Bangladesh</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form glassmorphism reveal-right">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary glow-effect" style="width: 100%;">Send Message <i
+                            class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="logo footer-logo">MS<span>AT</span></a>
+                <p class="footer-text">© 2026 MSAT | All Rights Reserved</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
